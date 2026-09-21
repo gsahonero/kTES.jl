@@ -1,0 +1,35 @@
+﻿# Julia artifacts & cache
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+deps/deps.jl
+
+# Documenter & VitePress build output
+docs/build/
+docs/site/
+docs/package.json
+docs/package-lock.json
+docs/node_modules/
+node_modules/
+.vitepress/dist/
+.vitepress/cache/
+
+# For now, docs is disabled. 
+docs
+.github/workflows/Documentation.yml
+
+# For now, CI and config are disabled.
+.github/workflows/CI.yml
+.github/workflows/config.yml
+
+
+# Manifests
+**/Manifest.toml
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

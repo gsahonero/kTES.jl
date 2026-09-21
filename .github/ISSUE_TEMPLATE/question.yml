@@ -1,0 +1,25 @@
+name: "💬 Question or Discussion"
+description: "Ask a question about MR physics, sequence configuration, or simulation parameters"
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about how k-TES simulates MR signals, how to tune parameters like $\sigma$ or $J$, or how to optimize a pulse sequence? Ask here!
+  - type: textarea
+    id: question
+    attributes:
+      label: "Your Question"
+      description: "What would you like to know or discuss?"
+      placeholder: "e.g., How do I select the number of clusters when simulating a custom brain phantom?"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context & Code"
+      description: "Any relevant code or experiment setup."
+      render: julia
+    validations:
+      required: false

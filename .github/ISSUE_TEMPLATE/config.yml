@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "kTES.jl Documentation"
+    url: "https://gsahonero.github.io/kTES.jl/"
+    about: "Read the official documentation, tutorials, theory, and API reference."
+  - name: "GitHub Discussions"
+    url: "https://github.com/gsahonero/kTES.jl/discussions"
+    about: "Join community discussions, ask general questions, and share sequence designs."
