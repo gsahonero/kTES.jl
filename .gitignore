@@ -26,6 +26,10 @@ docs
 # Manifests
 **/Manifest.toml
 
+# Avoiding really large files
+/experiments/k-space tissue ensemble simulation/data/phantoms.jld2
+/experiments/k-space tissue ensemble simulation/data/subject_1.mat
+
 # OS and Editor junk
 .DS_Store
 Thumbs.db
