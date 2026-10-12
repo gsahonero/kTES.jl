@@ -21,7 +21,7 @@ function default_SPGR_params(sys::Scanner)
         "α" => 45.0,
         "TE" => 25e-3,
         "TR" => 500e-3,
-        "t_ADC" => 128 * sys.ADC_Δt * 1, # Nx * Δt * OF
+        "t_ADC" => 128 * sys.ADC_Δt * 2, # Nx * Δt * OF
         "FOVx" => 0.35,
         "FOVy" => 0.35,
         "Nx" => 128,

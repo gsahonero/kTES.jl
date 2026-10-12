@@ -38,7 +38,7 @@ spgr_seq = create_2D_seq(spgr_params, SPGR(), sys)
 
 ## Simulation speed assessment
 
-us_vec = [1, 2]#, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+us_vec = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 tests = 50
 koma_allocs = zeros(length(us_vec))
 koma_gctimes = zeros(length(us_vec), tests)

@@ -24,7 +24,7 @@ end
 
 ## Preparing scanner
 sys = Scanner()
-FOVx, FOVy, slice_thickness = 0.25, 0.25, 1e-3
+FOVx, FOVy, slice_thickness = 0.25, 0.25, 2e-3
 Nx, Ny = 128, 128
 Δ = FOVx/Nx
 

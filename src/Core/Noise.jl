@@ -23,6 +23,14 @@ function add_noise(raw::Array{ComplexF32, 3}, p::SeqParams, σ::Float64, techniq
     return raw .+ noise
 end
 
+function add_noise(raw::Matrix{ComplexF32}, p::SeqParams, σ::Float64, technique::FullNoise, sys::Scanner)
+    OF = round((p.t_ADC / p.Nx)/ sys.ADC_Δt, digits = 2)
+    noise = rand(Normal(0, (σ / sqrt(p.NSA))), (Int(OF * p.Nx), Int(p.Ny), 1)) + rand(Normal(0, (σ / sqrt(p.NSA))), (Int(OF * p.Nx), Int(p.Ny), 1)) .* 1im
+
+    #noise = rand(Normal(0, (σ / sqrt(p.NSA)) / sqrt(OF)), (Int(p.Nx), Int(p.Ny), 1)) + rand(Normal(0, (σ / sqrt(p.NSA)) / sqrt(OF)), (Int(p.Nx), Int(p.Ny), 1)) .* 1im
+    return raw .+ noise
+end
+
 """
     add_noise(raw::Array{ComplexF32, 3}, p::SeqParams, σ::Float64, technique::ReducedNoise, sys::Scanner)
 

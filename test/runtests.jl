@@ -63,5 +63,12 @@ using Test
         sim_data = simulate_acquisition(one_spin_phantoms, SPGR_params, acq_params, Dict("return_type" => "mat", "sim_method" => Bloch()), A, sys; replicas = N_replicas, full_phantom = phantom_HF, T2s_params = T2sParams(method = NoApproximation()))
         @test isa(sim_data, Tuple{Array{ComplexF64, 3}, Matrix{ComplexF64}, Matrix{ComplexF64}, Float64, <:Sequence})
     end
-    
+    @testset "k-TES Simulation" begin
+        phantom = brain_phantom2D();
+        sys = Scanner();
+        seq_params = default_SPGR_params(sys);
+        seq = create_GE_2D(seq_params, sys);
+        data = simulate_acquisition(phantom, seq, sys)
+        display(plot_image(abs.(data[3])))
+    end
 end

@@ -535,7 +535,7 @@ function simulate_acquisition(
     #kernel_size, OF_conv, min_l, max_l = define_kernel(seq, OF)
     kernel_size, OF_conv, min_l, max_l = define_kernel(seq.DEF["parameters"], OF)
     D        = create_kernel(acq_params.conv_technique, kernel_size) .+ 0im
-    conv_raw  = conv(D, raw)[min_l:end - max_l]
+    conv_raw  = conv(D, raw[:])[min_l:end - max_l]
     conv_raw  = reshape(conv_raw, (OF_conv * Nx, Ny))
     conv_image = conv_raw[1:OF_conv:end, :]
 
@@ -558,9 +558,11 @@ function simulate_acquisition(phantom::Phantom, seq::Sequence, sys::Scanner; seq
     acq_params = default_acq_params()
     sim_params = Dict("return_type" => "mat", "method" => Bloch())
     T2s_params = T2sParams(method = NoApproximation())
-    OSP = ComplexF32.(create_support_phantoms(phantom, seq, sys; replicas = replicas, T2s_params = T2s_params))
-    A = create_ktes_support(phantom, seq, sys)
-    return simulate_acquisition(OSP, seq, acq_params, sys, sim_params, A, replicas, phantom;seq_inspection = seq_inspection)
+    tissues, _, tissue_maps = phantom_descriptor(phantom)
+    plan = build_tissue_support_plan(phantom, tissue_maps, seq)
+    A = ComplexF32.(create_ktes_support(phantom, tissue_maps, seq; plan = plan))
+    OSP = create_support_phantoms(phantom, seq, sys; replicas = replicas, T2s_params = T2s_params)
+    return simulate_acquisition(OSP, seq, acq_params, sys, sim_params, A, replicas, phantom, tissue_maps, plan;seq_inspection = seq_inspection)
 end
 
 # TODO this needs to be faster if we have the sequence already!
