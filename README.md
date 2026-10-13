@@ -1,18 +1,15 @@
-<h1 align="center">kTES.jl</h1>
-
-<p align="center">
-  <b>k-space Tissue Ensemble Simulation</b>
-</p>
-
-<p align="center">
-  <i>Fast, physics-accurate MRI sequence simulation in Julia.</i>
-</p>
-
 <div align="center">
 
-[![Julia 1.10+](https://img.shields.io/badge/julia-v1.10+-9558B2.svg?logo=julia)](https://julialang.org)
-[![CI](https://github.com/gsahonero/kTES.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/gsahonero/kTES.jl/actions/workflows/CI.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  <img src="logos/ktes.svg" alt="kTES.jl Logo" width="220" />
+
+  <h1>kTES.jl</h1>
+
+  <p><b>k-space Tissue Ensemble Simulation</b></p>
+  <p><i>Fast, physics-accurate MRI sequence simulation in Julia.</i></p>
+
+  [![Julia 1.10+](https://img.shields.io/badge/julia-v1.10+-9558B2.svg?logo=julia)](https://julialang.org)
+  [![CI](https://github.com/gsahonero/kTES.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/gsahonero/kTES.jl/actions/workflows/CI.yml)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
